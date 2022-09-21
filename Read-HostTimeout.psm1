@@ -14,6 +14,9 @@
 	Changelog
 	---------
 	2022-09-20		1.0.0.0		Initial publication
+	2022-09-22		1.0.0.1		Removed .NOTES sample text
+						Removed empty line outputs
+						Replaced alias `sleep` with proper `Start-Sleep`
 #>
 
 function Read-HostTimeout
@@ -44,7 +47,7 @@ function Read-HostTimeout
 		PS C:\> Read-HostTimeout -ConfirmKey q -Prompt "To quit this mode press q" -Duration 5
 	
 	.NOTES
-		Additional information about the function.
+		
 #>
 
 {
@@ -84,14 +87,13 @@ function Read-HostTimeout
 	
 	#displaying the prompt
 	Write-Information -MessageData "$Prompt" -InformationAction Continue
-	Write-Information -MessageData "" -InformationAction Continue
 	Write-Information -MessageData "Countdown..." -InformationAction Continue
 	
 	#displaying the countdown as long as there is no input or the input is not the confirmation key, and the countdown has not reached zero yet  
 	$i = $Duration
 	while (((($keyavailable = [Console]::KeyAvailable) -eq $false) -or (($readkey = [Console]::ReadKey().Key) -ne $ConfirmKey)) -and ($i -ge 0))
 	{
-		sleep 1
+		Start-Sleep 1
 		Write-Information -MessageData "...$i" -InformationAction Continue
 		$i--
 	}
@@ -100,7 +102,6 @@ function Read-HostTimeout
 	if ($i -eq -1)
 	{
 		Write-Information -MessageData "...timeout" -InformationAction Continue
-		Write-Information -MessageData "" -InformationAction Continue
 		$global:readhosttimeout = $null
 	}
 	
@@ -108,7 +109,6 @@ function Read-HostTimeout
 	else
 	{
 		Write-Information -MessageData "...stopped" -InformationAction Continue
-		Write-Information -MessageData "" -InformationAction Continue
 		$global:readhosttimeout = $readkey
 	}
 	
