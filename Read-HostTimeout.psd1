@@ -6,7 +6,7 @@
 	-------------------------------------------------------------------------
 	 Name:			Read-HostTimeout
 	 Type:			PowerShell module manifest
-	 Version:		1.0.0.0
+	 Version:		1.0.0.2
 	===========================================================================
 #>
 
@@ -14,6 +14,7 @@
 	Changelog
 	---------
 	2022-09-20		1.0.0.0		Initial publication
+	2022-09-22		1.0.0.2		Changes to Read-HostTimeout.psm1
 #>
 
 @{
@@ -21,7 +22,7 @@
 	RootModule = 'Read-HostTimeout.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0.0'
+	ModuleVersion = '1.0.0.2'
 	
 	# ID used to uniquely identify this module
 	GUID = '57a67405-c075-448d-aca9-73d679378224'
