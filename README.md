@@ -1,5 +1,5 @@
 # Read-HostTimeout
-## 1.0.0.2
+## 1.0.0.20241101
 		.SYNOPSIS
 			`Read-Host` with timeout countdown.
 

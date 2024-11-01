@@ -1,20 +1,33 @@
 <#	
-	===========================================================================
-	 Filename:     	Read-HostTimeout.psd1
-	 Created by:   	Yannick Brouard
-	 Organization: 	BROuard SOLutions
-	-------------------------------------------------------------------------
-	 Name:			Read-HostTimeout
-	 Type:			PowerShell module manifest
-	 Version:		1.0.0.2
-	===========================================================================
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
+	Filename:     	Read-HostTimeout.psd1
+	Created by:   	Yannick Brouard
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	Name:			Read-HostTimeout
+	Type:			Powershell module manifest
+	Version:		1.0.0.20241101
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
 #>
 
 <#
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
 	Changelog
-	---------
-	2022-09-20		1.0.0.0		Initial publication
-	2022-09-22		1.0.0.2		Changes to Read-HostTimeout.psm1
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	1.0.0.20220920		Initial publication
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	1.0.0.20220922		Changes to Read-HostTimeout.psm1
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	1.0.0.20241101      Changes to Read-HostTimeout.psm1
+	                    Changed versioning to Major.Minor.Patch.Build Date*-Build Number**
+	                    Removed Organization
+						Updated info
+						Cleaned up code; fixed typos
+	
+	                    *Date format YYYYMMDD
+						**Number format XX; only used if there is more than one build per date
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
 #>
 
 @{
@@ -22,7 +35,7 @@
 	RootModule = 'Read-HostTimeout.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0.2'
+	ModuleVersion = '1.0.0.20241101'
 	
 	# ID used to uniquely identify this module
 	GUID = '57a67405-c075-448d-aca9-73d679378224'
@@ -31,10 +44,10 @@
 	Author = 'Yannick Brouard'
 	
 	# Company or vendor of this module
-	CompanyName = 'BROuard SOLutions'
+	#CompanyName = ''
 	
 	# Copyright statement for this module
-	Copyright = '(c) 2022. All rights reserved.'
+	Copyright = '(c) 2024. All rights reserved.'
 	
 	# Description of the functionality provided by this module
 	Description = '`Read-HostTimeout` is a function mimicking `Read-Host` with a timeout functionality added.'
@@ -106,10 +119,10 @@
 			Tags = @("Read-Host","console","input","query","timeout","countdown")
 			
 			# A URL to the license for this module.
-			LicenseUri = 'https://github.com/BROuardSOLutions/Read-HostTimeout/blob/main/LICENSE'
+			LicenseUri = 'https://github.com/yckbrd/Read-HostTimeout/blob/main/LICENSE'
 			
 			# A URL to the main website for this project.
-			ProjectUri = 'https://github.com/BROuardSOLutions/Read-HostTimeout'
+			ProjectUri = 'https://github.com/yckbrd/Read-HostTimeout'
 			
 			# A URL to an icon representing this module.
 			#IconUri = ''
@@ -131,7 +144,7 @@
 	} # End of PrivateData hashtable
 	
 	# HelpInfo URI of this module
-	HelpInfoURI = 'https://github.com/BROuardSOLutions/Read-HostTimeout/blob/main/README.md'
+	HelpInfoURI = 'https://github.com/yckbrd/Read-HostTimeout/blob/main/README.md'
 	
 	# Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 	#DefaultCommandPrefix = ''

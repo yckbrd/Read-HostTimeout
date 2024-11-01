@@ -1,24 +1,37 @@
 <#	
-	===========================================================================
-	 Filename:     	Read-HostTimeout.psm1
-	 Created by:   	Yannick Brouard
-	 Organization: 	BROuard SOLutions
-	-------------------------------------------------------------------------
-	 Name:			Read-HostTimeout
-	 Type:			PowerShell module
-	 Version:		1.0.0.2
-	===========================================================================
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
+	Filename:       Read-HostTimeout.psm1
+	Created by:     Yannick Brouard
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	Name:           Read-HostTimeout
+	Type:           Powershell module
+	Version:        1.0.0.20241101
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
 #>
 
 <#
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
 	Changelog
-	---------
-	2022-09-20		1.0.0.0		Initial publication
-	2022-09-22		1.0.0.1		Removed .NOTES sample text
-						Removed empty line outputs
-						Replaced alias `sleep` with proper `Start-Sleep`
-	2022-09-22		1.0.0.2		Moved `Get-Help` comment block to proper position
-						Cleaned up script
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	1.0.0.20220920      Initial publication
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	1.0.0.20220922-01   Removed .NOTES from comment-based help
+	                    Removed empty line outputs
+	                    Replaced alias `sleep` with proper `Start-Sleep`
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	1.0.0.20220922-02   Moved comment-based help to proper position
+	                    Cleaned up code
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+	1.0.0.20241101      Changed versioning to Major.Minor.Patch.Build Date*-Build Number**
+	                    Removed Organization from header
+	                    Added .LINK to comment-based help
+						Cleaned up code; fixed typos
+	
+	                    *Date format YYYYMMDD
+						**Number format XX; only used if there is more than one build per date
+	+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---
+
+	#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===
 #>
 
 function Read-HostTimeout
@@ -26,28 +39,34 @@ function Read-HostTimeout
 	
 	<#
 		.SYNOPSIS
-			`Read-Host` with timeout countdown.
+		`Read-Host` with timeout countdown.
 
 		.DESCRIPTION
-			`Read-HostTimeout` is a function mimicking `Read-Host` with a timeout functionality added.
+    	`Read-HostTimeout` is a function mimicking `Read-Host` with a timeout functionality added.
 
 		.PARAMETER ConfirmKey
-			Specifies the confirmation key which stops the countdown. Cannot be more than one character. Default is y.
+		Specifies the confirmation key which stops the countdown. Cannot be more than one character. Default is y.
 
 		.PARAMETER Prompt
-			Specifies the text of the prompt. If the string includes spaces, enclose it in quotation marks. Default is "To stop the countdown please press $ConfirmKey".
+		Specifies the text of the prompt. If the string includes spaces, enclose it in quotation marks. Default is "To stop the countdown please press $ConfirmKey".
 
 		.PARAMETER Duration
-			Specifies the duration of the countdown in seconds. Cannot be zero. Values accepted 1-255. Default is 10.
+		Specifies the duration of the countdown in seconds. Cannot be zero. Values accepted 1-255. Default is 10.
 
 		.EXAMPLE
-			PS C:\> Read-HostTimeout
+		PS C:\> Read-HostTimeout
 
 		.EXAMPLE
-			PS C:\> Read-HostTimeout -ConfirmKey s -Prompt "To start the process press s" -Duration 3
+		PS C:\> Read-HostTimeout -ConfirmKey s -Prompt "To start the process press s" -Duration 3
 
 		.EXAMPLE
-			PS C:\> Read-HostTimeout -ConfirmKey q -Prompt "To quit this mode press q" -Duration 5
+		PS C:\> Read-HostTimeout -ConfirmKey q -Prompt "To quit this mode press q" -Duration 5
+
+		.LINK
+		https://github.com/yckbrd/Read-HostTimeout
+
+		.LINK
+		https://gitlab.com/yckbrd/Read-HostTimeout
 	#>
 	
 	param
